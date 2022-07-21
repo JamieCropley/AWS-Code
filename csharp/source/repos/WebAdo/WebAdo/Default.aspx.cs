@@ -12,7 +12,7 @@ namespace WebAdo
 {
     public partial class Default : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+       protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
@@ -40,25 +40,6 @@ namespace WebAdo
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            
-            Response.Write("<center><h1>Read data from a database</h1></center><hr/>");
-            Response.Write("<br/>");
-            String txtValue = TextBox1.Text;
-            string s = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
-            SqlConnection con = new SqlConnection(s);
-            string sqlString = "select * from customers where Country=@Country";
-            SqlCommand cmd = new SqlCommand(sqlString, con);
-            cmd.Parameters.AddWithValue("@Country", txtValue);
-            con.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            GridView1.DataSource = dr;
-            GridView1.DataBind();
-            dr.Close();
-            con.Close();
-            
-        }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -78,6 +59,7 @@ namespace WebAdo
                 dr.Close();
                 con.Close();
             }
+
         }
     }
 }

@@ -6,21 +6,8 @@
 </head>
 <body>
 <h1>Read data from a database</h1>
-<form id="form1" runat="server">
-<div>
-    <br />
-    <br />
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-    <br />
-    <br />
-    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-    <br />
-    <br />
-    <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
-    </asp:DropDownList>
-    <br />
-    <br />
-</div>
+    <form id="form1" runat="server">
+        <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
 <asp:GridView ID="GridView1" runat="server"></asp:GridView>
 </form>
 </body>
